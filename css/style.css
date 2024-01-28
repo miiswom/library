@@ -65,6 +65,7 @@ header,
 .book-card div {
      display: flex;
      flex-direction: column;
+     position: relative;
 }
 
 .book-card div section {
@@ -103,3 +104,32 @@ header section {
      align-self: flex-end;
 }
 
+.close {
+     position: absolute;
+     right: 5px;
+     top: 5px;
+     width: 32px;
+     opacity: 0.3;
+}
+
+.close:hover {
+     opacity: 1;
+}
+
+.close:before,
+.close:after {
+     position: absolute;
+     left: 15px;
+     content: ' ';
+     height: 33px;
+     width: 5px;
+     background-color: #333;
+}
+
+.close:before {
+     transform: rotate(45deg);
+   }
+
+.close:after {
+     transform: rotate(-45deg);
+   }
