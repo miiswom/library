@@ -21,22 +21,85 @@
 /* BASE STYLES
 /*******************************************/
 
+h1 {
+     font-size: 3em;
+}
+
 body {
-     background: lime;
+     display: flex;
+     flex-direction: column;
+     padding: 30px;
 }
 
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
+header,
+header div,
+.order-section,
+.order-section-left,
+.order-section-right,
+.book-card div {
+     display: flex;
+     justify-content: space-between;
 }
 
-footer {
+header,
+.order-section {
+     margin-bottom: 30px;
+}
 
+.order-section {
+     width: 100%;
+     background: gainsboro;
+     height: 30px;
+     line-height: 30px;
+}
+
+.order-section-right {
+     flex-basis: 10%;
+     margin-right: 20px;
+}
+
+.book-card div {
+     display: flex;
+     flex-direction: column;
+}
+
+.book-card div section {
+     margin: 30px 10px;
+}
+
+#add-book {
+     align-self: flex-end;
+     margin: 10px 30px;
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+header section {
+     width: 300px;
+     padding: 30px;
+     color: dodgerblue;
+     border: 1px solid dodgerblue;
+     margin: 10px
+}
+
+.book-card {
+     width: 350px;
+     height: 300px;
+     background: blueviolet;
+     color: white;
+     font-size: 1.3em;
+     line-height: 1.3em;
+     padding: 20px;
+     margin: 10px
+}
+
+.book-card div button {
+     align-self: flex-end;
+}
+

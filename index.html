@@ -14,17 +14,21 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<img src="" alt="book-logo">
-		<h1>My Library</h1>
-		<section>
-			<h2>Library Log</h2>
-			<p>Total books count: <span id="books-count"></span></p>
-			<p>Read: <span id="books-read"></span></p>
-			<p>Not read: <span id="books-not-read"></span></p>
-		</section>
-
-		<section>
+		<header>
+			<div>
+				<img src="" alt="book-logo">
+				<h1>My Library</h1>
+			</div>
 			<section>
+				<h2>Library Log</h2>
+				<p>Total books count: <span id="books-count"></span></p>
+				<p>Read: <span id="books-read"></span></p>
+				<p>Not read: <span id="books-not-read"></span></p>
+			</section>
+		</header>
+
+		<section class="order-section">
+			<section class="order-section-left">
 				<p>Order By:</p>
 				<select>
 					<option>Insertion date</option>
@@ -34,13 +38,13 @@
 				</select>
 			</section>
 
-			<section>
+			<section class="order-section-right">
 				<p>Read</p>
 				<p>Not read</p>
 			</section>
 		</section>
 
-		<section>
+		<section class="book-card">
 			<div>
 				<button>Delete</button>
 				<section>
@@ -52,9 +56,10 @@
 				</section>
 				<button>Mark as read</button>
 			</div>
-
-			<button>New book</button>
 		</section>
+
+		<button id="add-book">New book</button>
+
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
