@@ -61,6 +61,38 @@
 			</div>
 		</section>
 
+		<section id="modal">
+			<h2>Add New Book</h2>
+			<form>
+				<label for="title">Book Title</label>
+				<input type="text" id="title" placeholder="Ex: No et Moi">
+				
+				<label for="author">Author</label>
+				<input type="text" id="author" placeholder="Ex: Delphine De Vigan">
+
+				<label for="pages">Number of pages</label>
+				<input type="number" id="pages" placeholder="Ex: 649">
+
+				<label for="lang">Languages</label>
+				<input type="text" id="lang" placeholder="Ex: French">
+
+				<label for="publication">Publishing date</label>
+				<input type="date" id="publication">
+
+				<legend>Did you read this book?</legend>
+				<div>
+					<label for="read">Read</label>
+					<input type="radio" id="read" name="status">
+					<label for="not-read">Not read</label> 
+					<input type="radio" id="not-read" name="status">
+				</div>
+
+				<button>Clear all</button>
+				<button type="submit">Add</button>
+
+			</form>
+		</section>
+
 		<a href="#" id="add-book">+</a>
 
 

@@ -5,13 +5,22 @@ const myLibrary = [];
 // the constructor...
 // author, title, number of pages, whether it’s been read and anything else you might want
 
-function Book() {
+function Book(author, title, pages, status) {
+  this.author = author,
+  this.title = title,
+  this.pages = pages,
+  this.language = language,
+  this.status = Boolean(status)
 }
 
 //Add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. 
 
+const addNewBook = document.querySelector("#add-book");
+
+addNewBook.addEventListener('click', addBookToLibrary)
 function addBookToLibrary() {
   // do stuff here
+  
 }
 
 // Write a function that loops through the array 
