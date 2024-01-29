@@ -259,4 +259,83 @@ input:checked + .slider:before {
      transform: rotate(-45deg);
    } */
 
-   
+#modal {
+     display: flex;
+     display: none;
+     position: absolute;
+     width: 500px;
+     height: 100%;
+     border: 1px solid black;
+     background: white;
+     top: 15%;
+     left: 40%;
+     bottom: 20%;
+     flex-direction: column;
+}
+
+#modal h2 {
+     font-size: 1.3em;
+     margin-bottom: 10px;
+     text-align: center;
+     font-weight: bold;
+     margin-top: 18px;
+}
+
+#modal form {
+     display: flex;
+     flex-direction: column;
+     padding: 30px;
+     gap: 5px;
+     align-items: center;
+}
+
+#modal form label,
+#modal form legend {
+     align-self: start;
+     padding-left: 20px;
+     font-size: 1.2em;
+}
+
+#modal form input[type="text"],
+#modal form input[type="number"],
+#modal form input[type="date"]
+ {
+     width: 400px;
+     height: 40px;
+     padding-left: 10px;
+     margin-bottom: 18px;
+}
+
+.modal-buttons {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 10px;
+     gap: 50px
+}
+
+.modal-buttons button:nth-child(1) {
+     background:red;
+     opacity: 0.7;
+     width: 100px;
+     height: 40px;
+     border-radius: 8px;
+     border: 1px solid gray;
+     font-size: 1.3em;
+     font-weight: bold;
+}
+
+.modal-buttons button:nth-child(1):hover,
+.modal-buttons button:nth-child(2):hover {
+     opacity: 1;
+}
+
+.modal-buttons button:nth-child(2) {
+     background-color:lime;
+     opacity: 0.7;
+     width: 100px;
+     height: 40px;
+     border-radius: 8px;
+     border: 1px solid gray;
+     font-size: 1.3em;
+     font-weight: bold;
+}
