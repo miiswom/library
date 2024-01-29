@@ -16,12 +16,30 @@ function Book(author, title, pages, status) {
 //Add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. 
 
 const addNewBook = document.querySelector("#add-book");
+const modal = document.querySelector("#modal");
+const modalX = document.querySelector("#modal-close")
 
-addNewBook.addEventListener('click', addBookToLibrary)
+addNewBook.addEventListener("click", openModal);
+modalX.addEventListener("click", closeModal)
+
+function openModal() {
+  modal.style.display = "block" 
+}
+
+function closeModal() {
+  modal.style.display = "none" 
+}
+
 function addBookToLibrary() {
   // do stuff here
-  
 }
+
+// MY PSEUDOCODE
+// user inputs its info
+// each input value gets pushed into an array following an order
+// when user presses 'Add': 
+// --- a new book-card is created using innerHTML
+// --- the book cards uses literals to add author, pages, etc
 
 // Write a function that loops through the array 
 // and displays each book on the page. You can display them in some sort of table, or each on their own “card”. It might help for now to manually add a few books to your array so you can see the display.
