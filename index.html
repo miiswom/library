@@ -14,53 +14,56 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<header>
-			<div>
-				<img src="" alt="book-logo">
-				<h1>My Library</h1>
-			</div>
-			<section class="log">
-				<h2>Library Log</h2>
-				<p>Total books count: <span id="books-count">1</span></p>
-				<p>Read: <span id="books-read">0</span></p>
-				<p>Not read: <span id="books-not-read">0</span></p>
-			</section>
-		</header>
-
-		<section class="order-section">
-			<section class="order-section-left">
-				<p>Order By:</p>
-				<select>
-					<option>Insertion date</option>
-				</select>
-				<select>
-					<option>Desc.</option>
-				</select>
-			</section>
-
-			<section class="order-section-right">
-				<p>Read</p>
-				<p>Not read</p>
-			</section>
-		</section>
-
-		<div class="container">
-			<section class="book-card">
+		<div id="main-container">
+			<header>
 				<div>
-					<a href="#" id="card-close"class="close"></a>
-					<section>
-						<h3>A Game Of Thrones</h3>
-						<h4>By: George R. R. Martin</h4>
-						<p>Number of pages: 694</p>
-						<p>Language: English</p>
-						<p>Published: July 1 1996</p>
-					</section>
-					<label class="switch">
-						<input type="checkbox">
-						<span class="slider round"></span>
-					</label>
+					<img src="" alt="book-logo">
+					<h1>My Library</h1>
 				</div>
+				<section class="log">
+					<h2>Library Log</h2>
+					<p>Total books count: <span id="books-count">1</span></p>
+					<p>Read: <span id="books-read">0</span></p>
+					<p>Not read: <span id="books-not-read">0</span></p>
+				</section>
+			</header>
+
+			<section class="order-section">
+				<section class="order-section-left">
+					<p>Order By:</p>
+					<select>
+						<option>Insertion date</option>
+					</select>
+					<select>
+						<option>Desc.</option>
+					</select>
+				</section>
+
+				<section class="order-section-right">
+					<p>Read</p>
+					<p>Not read</p>
+				</section>
 			</section>
+
+			<div class="container">
+				<section class="book-card">
+					<div>
+						<a href="#" id="card-close"class="close"></a>
+						<section id="card-content">
+							<h3 id="sample-title"></h3>
+							<h4 id="sample-author"></h4>
+							<p id="sample-pages"></p>
+							<p id="sample-lang"></p>
+							<p id="sample-pubs"></p>
+							<p id="sample-status"></p>
+						</section>
+						<label class="switch">
+							<input type="checkbox">
+							<span class="slider round"></span>
+						</label>
+					</div>
+				</section>
+			</div>
 		</div>
 
 
@@ -93,7 +96,7 @@
 
 				<div class="modal-buttons">
 					<button>Clear all</button>
-					<button type="submit">Add</button>
+					<button type="submit" id="add-button">Add</button>
 				</div>
 
 			</form>
