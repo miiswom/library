@@ -7,7 +7,7 @@ const newBookTitle = document.querySelector("#title");
 const newBookAuthor = document.querySelector("#author");
 const newBookPages = document.querySelector("#pages");
 const newBookLang = document.querySelector("#lang");
-const newBookPublication = document.querySelector("#publication");
+const newBookPubs = document.querySelector("#publication");
 const newBookIsRead = document.querySelector("#read");
 const newBookIsUnread = document.querySelector("#not-read");
 
@@ -20,7 +20,7 @@ const modalX = document.querySelector("#modal-close");
 const modalClearButton = document.querySelector("#clear-button");
 const addButton = document.querySelector("#add-button");
 
-const sampleArr = new Book("A Game Of Thrones", "By: George R. R. Martin", `Number of pages: 694`, "Language: English",`Published: July 1 1996`, "Status: Not read");
+const sampleArr = new Book("A Game Of Thrones", "George R. R. Martin", "694", "English", "July 1 1996", "Not read");
 
 
 addNewBook.addEventListener("click", openModal);
@@ -39,13 +39,14 @@ function closeModal() {
 }
 
 function clearModalValues() {
-  newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookLang.value, newBookPublication.value = "";
+  newBookTitle.value = "";
+  newBookAuthor.value = "";
+  newBookPages.value = "";
+  newBookLang.value = "";
+  newBookPubs.value = "";
+  newBookIsRead.checked == false;
+  newBookIsUnread.checked == false
 }
-
-
-
-// the constructor...
-// author, title, number of pages, whether it’s been read and anything else you might want
 
 function Book(title, author, pages, lang, pubs, status) {
   this.title = title,
@@ -67,12 +68,12 @@ Book.prototype.displayBook = function() {
     <div class="card-div"> 
     <a href="#" class="close"></a>
     <section class="card-content">
-      <h3>${this.title}</h3>
-      <h4>${this.author}</h4>
-      <p>${this.pages}</p>
-      <p>${this.lang}</p>
-      <p>${this.pubs}</p>
-      <p>${this.status}</p>
+      <h3>Title: ${this.title}</h3>
+      <h4>By: ${this.author}</h4>
+      <p>Number of pages: ${this.pages}</p>
+      <p>Language: ${this.lang}</p>
+      <p>Published: ${this.pubs}</p>
+      <p>Status: ${this.status}</p>
     </section>
     <label class="switch">
       <input type="checkbox">
@@ -81,43 +82,38 @@ Book.prototype.displayBook = function() {
   // console.log(this.author, this.title, this.pages, this.lang, this.pubs, this.status)
 }
 
-let newBookArr = []
+Book.prototype.clearValues = function() {
+  newBookTitle.value = "";
+  newBookAuthor.value = "";
+  newBookPages.value = "";
+  newBookLang.value = "";
+  newBookPubs.value = "";
+  newBookIsRead.checked == false;
+  newBookIsUnread.checked == false
+}
 
 
 sampleArr.displayBook();
 
-//Add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. 
-
-// each input value gets pushed into an array following an order
-
 function addBookToLibrary() {
-  
+
+  const newBookStatus = function(e) {
     if(newBookIsUnread.checked) {
-      newBookArr.push("unread")
+      return "unread";
     } else if (newBookIsRead.checked) {
-      newBookArr.push("read")
+      return "read";
     } else {
-      alert("Did you read this book?")
+      alert("Did you read this book?");
+      e.preventDefault()
     }
-    console.log(newBookArr);
-    newBookArr = [];
+  }
+
+  const newBookObj = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookLang.value, newBookPubs.value, newBookStatus());
+
+  newBookObj.displayBook();
+  newBookObj.clearValues();
+  closeModal();
 }
-// when user presses 'Add': 
-// --- a new book-card is created using innerHTML
-// --- the book cards uses literals to add author, pages, etc
-
-// Write a function that loops through the array 
-// and displays each book on the page. You can display them in some sort of table, or each on their own “card”. It might help for now to manually add a few books to your array so you can see the display.
-// const sampleCardContent = document.querySelector(".card-content").children;
-
-
-// function addSampleBook(arr) {
-//   for(let i=0; i < sampleCardContent.length; i++) {
-//     sampleCardContent[i].textContent = arr[i];
-//   }
-// }
-
-// addSampleBook(sampleArr)
 
 // Add a “NEW BOOK” button 
 // the button should bring up a form 

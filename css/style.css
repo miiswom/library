@@ -66,6 +66,7 @@ header,
 .order-section-right {
      flex-basis: 10%;
      margin-right: 20px;
+     position: relative;
 }
 
 .book-card div {
@@ -93,8 +94,9 @@ header,
      font-weight: bold;
 }
 
-.container {
+#container {
      display: flex;
+     flex-wrap: wrap;
 }
 
 #main-container {
@@ -322,7 +324,7 @@ input:checked + .slider:before {
      gap: 50px
 }
 
-.modal-buttons button:nth-child(1) {
+.modal-buttons a:nth-child(1) {
      background:red;
      opacity: 0.7;
      width: 100px;
@@ -333,12 +335,13 @@ input:checked + .slider:before {
      font-weight: bold;
 }
 
-.modal-buttons button:nth-child(1):hover,
-.modal-buttons button:nth-child(2):hover {
+.modal-buttons a:nth-child(1):hover,
+.modal-buttons a:nth-child(2):hover {
+     cursor: pointer;
      opacity: 1;
 }
 
-.modal-buttons button:nth-child(2) {
+.modal-buttons a:nth-child(2) {
      background-color:lime;
      opacity: 0.7;
      width: 100px;
@@ -347,4 +350,22 @@ input:checked + .slider:before {
      border: 1px solid gray;
      font-size: 1.3em;
      font-weight: bold;
+}
+
+.order-section-right p:nth-child(1)::before {
+     content:"";
+     position: absolute;
+     left: -30px;
+     background-color: #760da2;
+     height: 26px;
+     width: 26px;
+}
+
+.order-section-right p:nth-child(2)::before {
+     content:"";
+     position: absolute;
+     right: 60px;
+     background-color: #91799b;
+     height: 26px;
+     width: 26px;
 }
